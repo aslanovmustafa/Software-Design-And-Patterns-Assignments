@@ -3,51 +3,59 @@
 public class RobotLoader {
   
   public static void main(String[] args) {
+//	  if (synch.power) {
+//		}
+//	  else {throw new java.lang.Error("Robot is OFF. Turn it ON if you want it to move!");}
     RobotControl robotControl = new RobotControl();
-    /*
-    LikeButton lb = new LikeButton();
-    CommentButton cb = new CommentButton();
-    ShareButton sb = new ShareButton();
-    ReportButton rb = new ReportButton();
-    TagButton tb = new TagButton("Jotaro Kujo");
-    
-    LikeLikeCommand liked = new LikeLikeCommand(lb);
-    LikeUnlikeCommand unliked = new LikeUnlikeCommand(lb);
-		
-    CommentCommentCommand commented = new CommentCommentCommand(cb);
-    CommentUncommentCommand uncommented = new CommentUncommentCommand(cb);
-    
-    ShareShareCommand shared = new ShareShareCommand(sb);
-    ShareUnshareCommand unshared = new ShareUnshareCommand(sb);
-    
-    ReportReportCommand reported = new ReportReportCommand(rb);
-    ReportUnreportCommand unreported = new ReportUnreportCommand(rb);
-    
-    TagTagCommand tagged = new TagTagCommand(tb);
-    TagUntagCommand untagged = new TagUntagCommand(tb);
-    
-    reactionControl.setCommand(0, liked, unliked);
-    reactionControl.setCommand(1, commented, uncommented);
-    reactionControl.setCommand(2, shared, unshared);
-    reactionControl.setCommand(3, reported, unreported);
-    reactionControl.setCommand(4, tagged, untagged);
 
+    power p = new power();
+    move m = new move();
+    turn t = new turn();
+    flower f = new flower();
+    ZigZagPlantFacade ZP = new ZigZagPlantFacade(p, t, m, f);
     
-    reactionControl.onButtonWasPushed(0);
-    reactionControl.offButtonWasPushed(0);
-    reactionControl.undoButtonWasPushed();
+    powerOnCommand on = new powerOnCommand(p);
+   	powerOffCommand off = new powerOffCommand(p);
+		
+    turnLeftCommand left = new turnLeftCommand(t);
+    turnRightCommand right = new turnRightCommand(t);
     
-    reactionControl.onButtonWasPushed(1);
-    reactionControl.offButtonWasPushed(1);
-    reactionControl.undoButtonWasPushed();
+    moveForwardCommand forward = new moveForwardCommand(m);
+    moveBackwardCommand backward = new moveBackwardCommand(m);
     
-    reactionControl.onButtonWasPushed(2);
-    reactionControl.offButtonWasPushed(2);
-    reactionControl.undoButtonWasPushed();
+    plantFlowerCommand plant = new plantFlowerCommand(f);
+    reapFlowerCommand reap = new reapFlowerCommand(f);
     
-    reactionControl.onButtonWasPushed(3);
-    reactionControl.offButtonWasPushed(3);
-    reactionControl.undoButtonWasPushed();
-    */
+    ZPCommand zp = new ZPCommand(ZP);
+    goHomeCommand goHome = new goHomeCommand(ZP);
+    
+    
+    robotControl.setCommand(0, on, off);
+    robotControl.setCommand(1, left, right);
+    robotControl.setCommand(2, forward, backward);
+    robotControl.setCommand(3, plant, reap);
+    robotControl.setCommand(4, zp, goHome);
+
+ 
+    robotControl.onButtonWasPushed(0);
+    robotControl.offButtonWasPushed(0);
+    robotControl.undoButtonWasPushed();
+    
+    robotControl.onButtonWasPushed(1);
+    robotControl.offButtonWasPushed(1);
+    robotControl.undoButtonWasPushed();
+    
+    robotControl.onButtonWasPushed(2);
+    robotControl.offButtonWasPushed(2);
+    robotControl.undoButtonWasPushed();
+    
+    robotControl.onButtonWasPushed(3);
+    robotControl.offButtonWasPushed(3);
+    robotControl.undoButtonWasPushed();
+    
+    robotControl.onButtonWasPushed(4);
+    robotControl.offButtonWasPushed(4);
+    robotControl.undoButtonWasPushed();
+
   }
 }

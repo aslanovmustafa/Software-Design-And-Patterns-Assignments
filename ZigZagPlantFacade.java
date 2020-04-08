@@ -20,6 +20,7 @@ public class ZigZagPlantFacade{
 	}
 						
 	public void ZP() {
+		System.out.println("-----------------------------------------------");
 		System.out.println("Robot starts planting flowes in zig zag manner.");
 		m.forward();
 		f.plant();
@@ -28,15 +29,18 @@ public class ZigZagPlantFacade{
 		f.plant();
 		t.right();
 		System.out.println("Robot finished zig zag planting.");
+		System.out.println("-----------------------------------------------\n");
 	}
 	
 	public void goHome() {//assuming i can only call ZP once?
+		System.out.println("-----------------------------------------------");
 		System.out.println("Robot is going home now.");
 		t.left();
 		m.back();
 		t.right();
 		m.back();
 		System.out.println("Robot is back home."); //it's quarantine it wasn't supposed to be leaving home to begin with.
+		System.out.println("-----------------------------------------------\n");
 	}
 	
 	
