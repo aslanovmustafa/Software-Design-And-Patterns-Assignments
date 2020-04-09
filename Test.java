@@ -1,5 +1,5 @@
 import java.util.Scanner;
-//loader class to run
+//class to run
 
 public class Test {
 	public static void main(String[] args) {
@@ -87,7 +87,7 @@ public class Test {
 					}
 
 				}
-
+			else {System.out.println("Robot is OFF. Turn it ON if you want it to move!");}
 			}
 			sc.close();
 		}
