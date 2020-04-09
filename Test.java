@@ -3,9 +3,6 @@ import java.util.Scanner;
 
 public class Test {
 	public static void main(String[] args) {
-//	  if (synch.power) {
-//		}
-//	  else {throw new java.lang.Error("Robot is OFF. Turn it ON if you want it to move!");}
 		String input;
 		RobotControl robotControl = new RobotControl();
 
