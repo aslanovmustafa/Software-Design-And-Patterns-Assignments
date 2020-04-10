@@ -25,13 +25,13 @@ public class Test {
 		reapFlowerCommand reap = new reapFlowerCommand(f);
 
 		ZPCommand zp = new ZPCommand(ZP);
-		goHomeCommand goHome = new goHomeCommand(ZP);
+		reverseZPCommand reverseZP = new reverseZPCommand(ZP);
 
 		robotControl.setCommand(0, on, off);
 		robotControl.setCommand(1, left, right);
 		robotControl.setCommand(2, forward, backward);
 		robotControl.setCommand(3, plant, reap);
-		robotControl.setCommand(4, zp, goHome);
+		robotControl.setCommand(4, zp, reverseZP);
 
 		try (Scanner sc = new Scanner(System.in)) {
 			System.out.println("Enter your command: ");
@@ -79,7 +79,6 @@ public class Test {
 							break;
 						}
 						case "GH": {
-							robotControl.SecondButtonWasPushed(4);
 							break;
 						}
 						case "QUIT":

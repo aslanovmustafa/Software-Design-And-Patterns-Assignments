@@ -1,22 +1,22 @@
 
-public class ZPCommand implements Command{
+public class reverseZPCommand implements Command{
 
 	  ZigZagPlantFacade zp;
 	  
-	  public ZPCommand(ZigZagPlantFacade zp) {
+	  public reverseZPCommand(ZigZagPlantFacade zp) {
 	    this.zp = zp;
 	  }
 	
 	
 	@Override
 	public void execute() {
-		zp.ZP();
+		zp.reverseZP();
 		
 	}
 
 	@Override
 	public void undo() {
-		zp.reverseZP();
+		zp.ZP();
 	}
 
 }

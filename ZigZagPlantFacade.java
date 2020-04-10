@@ -31,14 +31,16 @@ public class ZigZagPlantFacade{
 		System.out.println("-----------------------------------------------\n");
 	}
 	
-	public void goHome() {//assuming i can only call ZP once?
+	public void reverseZP() {
 		System.out.println("-----------------------------------------------");
-		System.out.println("Robot is going home now.");
+		System.out.println("Robot is regretting its decisions and going back.");
 		t.left();
+		f.reap();
 		m.back();
 		t.right();
+		f.reap();
 		m.back();
-		System.out.println("Robot is back home."); //it's quarantine it wasn't supposed to be leaving home to begin with.
+		System.out.println("Robot is back to the place before it started zig zag planting."); //it's quarantine it wasn't supposed to be leaving home to begin with.
 		System.out.println("-----------------------------------------------\n");
 	}
 	
