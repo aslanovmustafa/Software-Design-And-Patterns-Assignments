@@ -25,7 +25,10 @@ public class Test {
 		reapFlowerCommand reap = new reapFlowerCommand(f);
 
 		ZPCommand zp = new ZPCommand(ZP);
-
+		//not doing it set of 2 buttons in one command because some buttons don't have a combination to it. 
+		//Like ZigZagPlanting doesn't have a button to reverse it but only works with undo button. Same with GoHome
+		//it would not make sense to reverse going home before going anywhere to begin with or to unplant flowers before planting them.
+		//Therefore, each command set has only one button to be pushed.
 		robotControl.setCommand(0, on);
 		robotControl.setCommand(1, off);
 		robotControl.setCommand(2, left);
