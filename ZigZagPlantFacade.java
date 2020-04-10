@@ -1,4 +1,3 @@
-//if the weather is rainy software configures parameters itself
 public class ZigZagPlantFacade{
 	
 	power p;
