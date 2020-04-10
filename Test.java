@@ -25,20 +25,22 @@ public class Test {
 		reapFlowerCommand reap = new reapFlowerCommand(f);
 
 		ZPCommand zp = new ZPCommand(ZP);
-		reverseZPCommand reverseZP = new reverseZPCommand(ZP);
 
-		robotControl.setCommand(0, on, off);
-		robotControl.setCommand(1, left, right);
-		robotControl.setCommand(2, forward, backward);
-		robotControl.setCommand(3, plant, reap);
-		robotControl.setCommand(4, zp, reverseZP);
-
+		robotControl.setCommand(0, on);
+		robotControl.setCommand(1, off);
+		robotControl.setCommand(2, left);
+		robotControl.setCommand(3, right);
+		robotControl.setCommand(4, forward);
+		robotControl.setCommand(5, backward);
+		robotControl.setCommand(6, plant);
+		robotControl.setCommand(7, zp);
+	
 		try (Scanner sc = new Scanner(System.in)) {
 			System.out.println("Enter your command: ");
 			loop: while (sc.hasNext()) {
 				input = sc.nextLine();
 				if (input.equals("ON")) {
-					robotControl.FirstButtonWasPushed(0);
+					robotControl.ButtonWasPushed(0);
 					while (sc.hasNext() && synch.power) {
 						input = sc.nextLine();
 						switch (input) {
@@ -47,23 +49,23 @@ public class Test {
 							break;
 						}
 						case "FF": {
-							robotControl.SecondButtonWasPushed(0);
+							robotControl.ButtonWasPushed(1);
 							break;
 						}
 						case "MF": {
-							robotControl.FirstButtonWasPushed(2);
+							robotControl.ButtonWasPushed(4);
 							break;
 						}
 						case "MB": {
-							robotControl.SecondButtonWasPushed(2);
+							robotControl.ButtonWasPushed(5);
 							break;
 						}
 						case "TL": {
-							robotControl.FirstButtonWasPushed(1);
+							robotControl.ButtonWasPushed(2);
 							break;
 						}
 						case "TR": {
-							robotControl.SecondButtonWasPushed(1);
+							robotControl.ButtonWasPushed(3);
 							break;
 						}
 						case "UN": {
@@ -71,11 +73,11 @@ public class Test {
 							break;
 						}
 						case "PF": {
-							robotControl.FirstButtonWasPushed(3);
+							robotControl.ButtonWasPushed(6);
 							break;
 						}
 						case "ZP": {
-							robotControl.FirstButtonWasPushed(4);
+							robotControl.ButtonWasPushed(7);
 							break;
 						}
 						case "GH": {
