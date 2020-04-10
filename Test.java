@@ -11,6 +11,7 @@ public class Test {
 		turn t = new turn();
 		flower f = new flower();
 		ZigZagPlantFacade ZP = new ZigZagPlantFacade(p, t, m, f);
+		GoHomeFacade GH = new GoHomeFacade();
 
 		powerOnCommand on = new powerOnCommand(p);
 		powerOffCommand off = new powerOffCommand(p);
@@ -25,6 +26,7 @@ public class Test {
 		reapFlowerCommand reap = new reapFlowerCommand(f);
 
 		ZPCommand zp = new ZPCommand(ZP);
+		GoHomeCommand gh = new GoHomeCommand(GH);
 		//not doing it set of 2 buttons in one command because some buttons don't have a combination to it. 
 		//Like ZigZagPlanting doesn't have a button to reverse it but only works with undo button. Same with GoHome
 		//it would not make sense to reverse going home before going anywhere to begin with or to unplant flowers before planting them.
@@ -37,6 +39,7 @@ public class Test {
 		robotControl.setCommand(5, backward);
 		robotControl.setCommand(6, plant);
 		robotControl.setCommand(7, zp);
+		robotControl.setCommand(8, gh);
 	
 		try (Scanner sc = new Scanner(System.in)) {
 			System.out.println("Enter your command: ");
@@ -84,6 +87,7 @@ public class Test {
 							break;
 						}
 						case "GH": {
+							robotControl.ButtonWasPushed(8);
 							break;
 						}
 						case "QUIT":

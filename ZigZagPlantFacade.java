@@ -40,7 +40,7 @@ public class ZigZagPlantFacade{
 		t.right();
 		f.reap();
 		m.back();
-		System.out.println("Robot is back to the place before it started zig zag planting."); //it's quarantine it wasn't supposed to be leaving home to begin with.
+		System.out.println("Robot is back to the place before it started zig zag planting."); 
 		System.out.println("-----------------------------------------------\n");
 	}
 	
