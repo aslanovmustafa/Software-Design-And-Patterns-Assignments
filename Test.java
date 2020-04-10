@@ -36,30 +36,34 @@ public class Test {
 		try (Scanner sc = new Scanner(System.in)) {
 			System.out.println("Enter your command: ");
 			loop: while (sc.hasNext()) {
-			input = sc.nextLine();
-			if (input.equals("ON")) {
-				robotControl.onButtonWasPushed(0);
-				 while (sc.hasNext() && synch.power) {
-					input = sc.nextLine();
+				input = sc.nextLine();
+				if (input.equals("ON")) {
+					robotControl.FirstButtonWasPushed(0);
+					while (sc.hasNext() && synch.power) {
+						input = sc.nextLine();
 						switch (input) {
+						case "ON": {
+							System.out.println("Robot is already ON.");
+							break;
+						}
 						case "FF": {
-							robotControl.offButtonWasPushed(0);
+							robotControl.SecondButtonWasPushed(0);
 							break;
 						}
 						case "MF": {
-							robotControl.onButtonWasPushed(2);
+							robotControl.FirstButtonWasPushed(2);
 							break;
 						}
 						case "MB": {
-							robotControl.offButtonWasPushed(2);
+							robotControl.SecondButtonWasPushed(2);
 							break;
 						}
 						case "TL": {
-							robotControl.onButtonWasPushed(1);
+							robotControl.FirstButtonWasPushed(1);
 							break;
 						}
 						case "TR": {
-							robotControl.offButtonWasPushed(1);
+							robotControl.SecondButtonWasPushed(1);
 							break;
 						}
 						case "UN": {
@@ -67,15 +71,15 @@ public class Test {
 							break;
 						}
 						case "PF": {
-							robotControl.onButtonWasPushed(3);
+							robotControl.FirstButtonWasPushed(3);
 							break;
 						}
 						case "ZP": {
-							robotControl.onButtonWasPushed(4);
+							robotControl.FirstButtonWasPushed(4);
 							break;
 						}
 						case "GH": {
-							robotControl.offButtonWasPushed(4);
+							robotControl.SecondButtonWasPushed(4);
 							break;
 						}
 						case "QUIT":
@@ -86,27 +90,11 @@ public class Test {
 						}
 					}
 
+				} else {
+					System.out.println("Robot is OFF. Turn it ON if you want it to move!");
 				}
-			else {System.out.println("Robot is OFF. Turn it ON if you want it to move!");}
 			}
 			sc.close();
 		}
-		/*
-		 * robotControl.onButtonWasPushed(0); robotControl.offButtonWasPushed(0);
-		 * robotControl.undoButtonWasPushed();
-		 * 
-		 * robotControl.onButtonWasPushed(1); robotControl.offButtonWasPushed(1);
-		 * robotControl.undoButtonWasPushed();
-		 * 
-		 * robotControl.onButtonWasPushed(2); robotControl.offButtonWasPushed(2);
-		 * robotControl.undoButtonWasPushed();
-		 * 
-		 * robotControl.onButtonWasPushed(3); robotControl.offButtonWasPushed(3);
-		 * robotControl.undoButtonWasPushed();
-		 * 
-		 * robotControl.onButtonWasPushed(4); robotControl.offButtonWasPushed(4);
-		 * robotControl.undoButtonWasPushed();
-		 */
-
 	}
 }

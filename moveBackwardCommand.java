@@ -11,7 +11,7 @@ public class moveBackwardCommand implements Command {
 
 	@Override
 	public void undo() {
-		//
+		mb.forward();
 		
 	}
 }
