@@ -23,7 +23,6 @@ public class Test {
 		moveBackwardCommand backward = new moveBackwardCommand(m);
 
 		plantFlowerCommand plant = new plantFlowerCommand(f);
-		reapFlowerCommand reap = new reapFlowerCommand(f);
 
 		ZPCommand zp = new ZPCommand(ZP);
 		GoHomeCommand gh = new GoHomeCommand(GH);

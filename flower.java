@@ -7,9 +7,4 @@ public class flower {
 		    		+ "\nY: " + synch.Y);
 		  }
 		  
-		  public void reap() {
-			  System.out.println("Robot reaped a flower at:\n"
-			    		+ "X: " + synch.X
-			    		+ "\nY: " + synch.Y);
-		  }
 }

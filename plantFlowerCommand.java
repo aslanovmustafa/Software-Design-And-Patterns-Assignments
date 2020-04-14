@@ -13,8 +13,7 @@ public class plantFlowerCommand implements Command{
 
 	@Override
 	public void undo() {
-		f.reap();
-		
+		System.out.println("Impossible");
 	}
 
 }

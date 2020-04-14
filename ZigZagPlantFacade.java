@@ -33,12 +33,10 @@ public class ZigZagPlantFacade{
 	
 	public void reverseZP() {
 		System.out.println("-----------------------------------------------");
-		System.out.println("Robot is regretting its decisions and going back.");
+		System.out.println("Robot is regretting its decisions and going back. But it can't reap the flowers anymore.");
 		t.left();
-		f.reap();
 		m.back();
 		t.right();
-		f.reap();
 		m.back();
 		System.out.println("Robot is back to the place before it started zig zag planting."); 
 		System.out.println("-----------------------------------------------\n");
