@@ -45,11 +45,11 @@ public class Test {
 			System.out.println("Enter your command: ");
 			loop: while (sc.hasNext()) {
 				input = sc.nextLine();
-				if (input.equals("ON")) {
+				if (input.equalsIgnoreCase("ON")) {
 					robotControl.ButtonWasPushed(0);
 					while (sc.hasNext() && synch.power) {
 						input = sc.nextLine();
-						switch (input) {
+						switch (input.toUpperCase()) {
 						case "ON": {
 							System.out.println("Robot is already ON.");
 							break;
