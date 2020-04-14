@@ -1,4 +1,4 @@
-
+// command to execute go home facade's go home method
 public class GoHomeCommand implements Command {
 
 	  GoHomeFacade gh;

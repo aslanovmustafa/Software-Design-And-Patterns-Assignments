@@ -4,8 +4,9 @@ import java.util.Scanner;
 public class Test {
 	public static void main(String[] args) {
 		String input;
+		//initializing the control 
 		RobotControl robotControl = new RobotControl();
-
+		//initializing the commands here
 		power p = new power();
 		move m = new move();
 		turn t = new turn();
@@ -26,6 +27,7 @@ public class Test {
 
 		ZPCommand zp = new ZPCommand(ZP);
 		GoHomeCommand gh = new GoHomeCommand(GH);
+		
 		//not doing it set of 2 buttons in one command because some buttons don't have a combination to it. 
 		//Like ZigZagPlanting doesn't have a button to reverse it but only works with undo button. Same with GoHome
 		//it would not make sense to reverse going home before going anywhere to begin with or to unplant flowers before planting them.
@@ -40,6 +42,7 @@ public class Test {
 		robotControl.setCommand(7, zp);
 		robotControl.setCommand(8, gh);
 	
+		//scanner part for user input. It ignores the case of inputs just in case (pun intended)
 		try (Scanner sc = new Scanner(System.in)) {
 			System.out.println("Enter your command: ");
 			loop: while (sc.hasNext()) {
@@ -92,13 +95,13 @@ public class Test {
 						case "QUIT":
 							break loop;
 						default: {
-							System.out.println("Try again: ");
+							System.out.println("Try again: "); //in case of wrong input
 						}
 						}
 					}
 
 				} else {
-					System.out.println("Robot is OFF. Turn it ON if you want it to move!");
+					System.out.println("Robot is OFF. Turn it ON if you want it to move!"); //assignment task said to not to do anything but we decided it'd be more user friendly 
 				}
 			}
 			sc.close();

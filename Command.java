@@ -4,5 +4,4 @@ public interface Command {
   public void undo();
 }
 
-//social media post reactor UI for mobile service
-//most of the classes are self descriptive
+//self-descriptive command class to use command pattern

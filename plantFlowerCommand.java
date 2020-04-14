@@ -1,4 +1,4 @@
-
+//command to plant flower
 public class plantFlowerCommand implements Command{
 	flower f;
 	public plantFlowerCommand(flower f) {
@@ -13,7 +13,7 @@ public class plantFlowerCommand implements Command{
 
 	@Override
 	public void undo() {
-		System.out.println("Impossible");
+		System.out.println("Impossible"); //can't undo this action
 	}
 
 }

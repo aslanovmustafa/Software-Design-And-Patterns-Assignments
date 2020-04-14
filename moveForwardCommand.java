@@ -1,3 +1,4 @@
+//command to move robot forward
 public class moveForwardCommand implements Command {
   move mf;
   

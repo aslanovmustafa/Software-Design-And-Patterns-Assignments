@@ -1,4 +1,4 @@
-
+//class where the planting method at but no reaping method cause not specified
 public class flower {
 
 	  public void plant() {

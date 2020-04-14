@@ -1,3 +1,5 @@
+//command to turn ON robot
+
 public class powerOnCommand implements Command {
   power p;
   

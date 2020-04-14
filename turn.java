@@ -1,5 +1,5 @@
 public class turn {
-
+//class where the turning methods are at
   public void left() {
 	  if (synch.North) {synch.West = true; synch.North = false; 	System.out.println("Robot turned left. Now facing West direction.");}
 	  else if (synch.West) {synch.South = true; synch.West = false;    System.out.println("Robot turned left. Now facing South direction.");}

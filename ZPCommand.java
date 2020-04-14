@@ -1,4 +1,4 @@
-
+//command to execute zigzag planting facade's zigzag planting method
 public class ZPCommand implements Command{
 
 	  ZigZagPlantFacade zp;

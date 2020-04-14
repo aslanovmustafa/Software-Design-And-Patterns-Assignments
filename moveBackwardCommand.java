@@ -1,3 +1,4 @@
+//command to move robot backward
 public class moveBackwardCommand implements Command {
   move mb;
 
